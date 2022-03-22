@@ -14,7 +14,7 @@ const getDatafromLS = () => {
 
 export const App = () => {
 
-  // main array of objects state || books state || books array of objects
+  // main array of objects state
   const [songs, setSongs] = useState(getDatafromLS());
 
   // input field states
@@ -26,7 +26,7 @@ export const App = () => {
   // form submit event
   const handleAddSongSubmit = (e) => {
     e.preventDefault();
-    // creating an object
+    // creating an object, it should be multiple identities!
     let song = {
       title,
       author,
@@ -40,7 +40,7 @@ export const App = () => {
     setId('');
   }
 
-  // delete book from LS
+  // delete song from LS
   const deleteSong = (id) => {
     const filteredSongs = songs.filter((element, index) => {
       return element.id !== id
@@ -55,8 +55,7 @@ export const App = () => {
 
   return (
     <div className='wrapper'>
-      <h1>SongList App</h1>
-      <p>manage your songs</p>
+      <div className='logo'></div>
       <div className='main'>
 
         <div className='form-container'>
